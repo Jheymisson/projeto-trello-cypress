@@ -30,5 +30,5 @@ describe('Buscar um Board pelo ID no Trello', () => {
         });
       });
     });
-  });
+});
   
