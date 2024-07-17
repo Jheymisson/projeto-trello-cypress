@@ -16,7 +16,7 @@ describe('Criar um novo Board no Trello', () => {
 
       }).then(response => {
         expect(response.status).to.eq(200);
-        console.log('Board criado com sucesso:', response.body);
+        cy.log('Board criado com sucesso:', JSON.stringify(response.body));
       });
     });
 });

@@ -23,8 +23,10 @@ describe('Buscar dados dos Boards no Trello', () => {
         name: board.name
       }));
 
-      cy.writeFile('cypress/fixtures/boardData.json', boardData);
-      console.log('Dados dos Boards:', boardData);
+      cy.writeFile('cypress/fixtures/boardData.json', boardData).then(() => {
+        cy.log('Dados dos Boards salvos:', JSON.stringify(boardData));
+      });
+      
     });
   });
 
