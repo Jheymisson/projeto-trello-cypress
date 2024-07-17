@@ -1,16 +1,22 @@
-describe('Teste de API com Trello', () => {
-    
-    it('Deve acessar os boards do usuário', () => {
-      const apiKey = Cypress.env('apiKey');
-      const apiToken = Cypress.env('apiToken');
+/// <reference types="cypress" />
+
+describe('Criar um novo Board no Trello', () => {
+    it('Deve criar um novo board com um nome dinâmico', function() {
+      const uniqueSuffix = Date.now() + Math.random().toString(15).substring(2, 15);
+      const boardName = `Board-${uniqueSuffix}`;
   
       cy.request({
-        method: 'GET',
-        url: `https://api.trello.com/1/members/me/boards?key=${apiKey}&token=${apiToken}`
-      }).then((response) => {
+        method: 'POST',
+        url: `https://api.trello.com/1/boards/?name=${encodeURIComponent(boardName)}`,
+        qs: {
+          key: Cypress.env('apiKey'),
+          token: Cypress.env('apiToken')
+        },
+
+      }).then(response => {
         expect(response.status).to.eq(200);
+        console.log('Board criado com sucesso:', response.body);
       });
     });
-    
-  });
+});
   

@@ -4,6 +4,7 @@ bower_components/
 
 # Arquivos de configuração de ambiente
 cypress.env.json
+package-lock.json
 
 # Arquivos de log
 npm-debug.log
