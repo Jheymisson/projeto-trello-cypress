@@ -1,0 +1,36 @@
+# Diretórios de dependências
+node_modules/
+bower_components/
+
+# Arquivos de configuração de ambiente
+cypress.env.json
+
+# Arquivos de log
+npm-debug.log
+yarn-error.log
+
+# Diretórios de cache do Cypress
+cypress/downloads/
+cypress/screenshots/
+cypress/videos/
+
+# Arquivos e pastas específicos do editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# Outros arquivos e diretórios a serem ignorados
+coverage/
+build/
+dist/
+
+# Arquivos de configuração temporária
+*.log
+*.tmp
+*.tmp.*
+temp/
