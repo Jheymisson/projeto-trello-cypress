@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
 describe('Criar um novo Board no Trello', () => {
+    
     it('Deve criar um novo board com um nome dinâmico', function() {
       const uniqueSuffix = Date.now() + Math.random().toString(15).substring(2, 15);
       const boardName = `Board-${uniqueSuffix}`;
